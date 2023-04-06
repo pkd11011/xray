@@ -102,6 +102,7 @@ Nodes:
       DeviceLimit: 3 # Local settings will replace remote settings, 0 means disable
       RuleListPath: # ./rulelist Path to local rulelist file
     ControllerConfig:
+      DisableSniffing: true
       ListenIP: 0.0.0.0 # IP address you want to listen
       SendIP: 0.0.0.0 # IP address you want to send pacakage
       UpdatePeriodic: 60 # Time to update the nodeinfo, how many sec.
@@ -142,6 +143,7 @@ Nodes:
       DeviceLimit: 3 # Local settings will replace remote settings, 0 means disable
       RuleListPath: # ./rulelist Path to local rulelist file
     ControllerConfig:
+      DisableSniffing: true    
       ListenIP: 0.0.0.0 # IP address you want to listen
       SendIP: 0.0.0.0 # IP address you want to send pacakage
       UpdatePeriodic: 60 # Time to update the nodeinfo, how many sec.
