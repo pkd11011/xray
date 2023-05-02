@@ -1,9 +1,6 @@
 #!/bin/bash
 bash <(curl -Ls https://raw.githubusercontent.com/XrayR-project/XrayR-release/master/install.sh)
 
-    read -p "Nhập Node ID port 80 :" node_80
-    echo -e "node_80 là : ${node_80}"
-
     read -p "Nhập Node ID port 443 :" node_443
     echo -e "node_443 là : ${node_443}"
 
