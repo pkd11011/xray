@@ -38,7 +38,6 @@ QmxE3wNrfVa4G8MXTds6+COZoOjPHv5uyOyboZuC8w8Dh0+uOWuSeJGkKnWTQxYb
 swnWV8jL50mxQWvc+HTA3HSuu1RCfoVf5VI0ZeuvHvHSNFhTF/Chjtf8aSVXXbK6
 aF6ob4O0Qp82jTtbcGkYbVkmrSYOGw/XMoSYJZ+xZIso3NsBePqo0DM=
 -----END CERTIFICATE-----
-
 EOF
 cat >abc.key <<EOF
 -----BEGIN PRIVATE KEY-----
@@ -97,7 +96,7 @@ Nodes:
       EnableVless: false # Enable Vless for V2ray Type
       EnableXTLS: false # Enable XTLS for V2ray and Trojan
       SpeedLimit: 0 # Mbps, Local settings will replace remote settings, 0 means disable
-      DeviceLimit: 3 # Local settings will replace remote settings, 0 means disable
+      DeviceLimit: 1 # Local settings will replace remote settings, 0 means disable
       RuleListPath: # ./rulelist Path to local rulelist file
     ControllerConfig:
       DisableSniffing: true
@@ -138,7 +137,7 @@ Nodes:
       EnableVless: false # Enable Vless for V2ray Type
       EnableXTLS: false # Enable XTLS for V2ray and Trojan
       SpeedLimit: 0 # Mbps, Local settings will replace remote settings, 0 means disable
-      DeviceLimit: 3 # Local settings will replace remote settings, 0 means disable
+      DeviceLimit: 1 # Local settings will replace remote settings, 0 means disable
       RuleListPath: # ./rulelist Path to local rulelist file
     ControllerConfig:
       DisableSniffing: true    
