@@ -96,7 +96,7 @@ Nodes:
   -
     PanelType: "V2board" # Panel type: SSpanel, V2board, NewV2board, PMpanel, Proxypanel, V2RaySocks
     ApiConfig:
-      ApiHost: "https://go.nganhangdata.com"
+      ApiHost: "https://nganhangdata.com"
       ApiKey: "gonganhangdata.com"
       NodeID: $node_id1
       NodeType: V2ray # Node type: V2ray, Shadowsocks, Trojan, Shadowsocks-Plugin
@@ -147,7 +147,7 @@ Nodes:
   -
     PanelType: "V2board" # Panel type: SSpanel, V2board, NewV2board, PMpanel, Proxypanel, V2RaySocks
     ApiConfig:
-      ApiHost: "https://go.nganhangdata.com"
+      ApiHost: "https://nganhangdata.com"
       ApiKey: "gonganhangdata.com"
       NodeID: $node_id2
       NodeType: V2ray # Node type: V2ray, Shadowsocks, Trojan, Shadowsocks-Plugin
