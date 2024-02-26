@@ -113,14 +113,7 @@ Nodes:
     ApiConfig:
       ApiHost: "https://nganhangdata.com"
       ApiKey: "gonganhangdata.com"
-      NodeID: $node_id1
-      NodeType: V2ray # Node type: V2ray, Shadowsocks, Trojan, Shadowsocks-Plugin
-      Timeout: 30 # Timeout for the api request
-      EnableVless: false # Enable Vless for V2ray Type
-      EnableXTLS: false # Enable XTLS for V2ray and Trojan
-      SpeedLimit: 0 # Mbps, Local settings will replace remote settings, 0 means disable
-      DeviceLimit: 2 # Local settings will replace remote settings, 0 means disable
-      RuleListPath: # /etc/XrayR/rulelist Path to local rulelist file
+     l rulelist file
     ControllerConfig:
       DisableSniffing: True
       ListenIP: 0.0.0.0 # IP address you want to listen
@@ -164,9 +157,7 @@ Nodes:
     ApiConfig:
       ApiHost: "https://nganhangdata.com"
       ApiKey: "gonganhangdata.com"
-      NodeID: $node_id2
-      NodeType: V2ray # Node type: V2ray, Shadowsocks, Trojan, Shadowsocks-Plugin
-      Timeout: 30 # Timeout for the api request
+     or the api request
       EnableVless: false # Enable Vless for V2ray Type
       EnableXTLS: false # Enable XTLS for V2ray and Trojan
       SpeedLimit: 0 # Mbps, Local settings will replace remote settings, 0 means disable
@@ -174,13 +165,7 @@ Nodes:
       RuleListPath: # /etc/XrayR/rulelist Path to local rulelist file
     ControllerConfig:
       DisableSniffing: True
-      ListenIP: 0.0.0.0 # IP address you want to listen
-      SendIP: 0.0.0.0 # IP address you want to send pacakage
-      UpdatePeriodic: 60 # Time to update the nodeinfo, how many sec.
-      EnableDNS: false # Use custom DNS config, Please ensure that you set the dns.json well
-      DNSType: AsIs # AsIs, UseIP, UseIPv4, UseIPv6, DNS strategy
-      EnableProxyProtocol: false # Only works for WebSocket and TCP
-      AutoSpeedLimitConfig:
+     
         Limit: 0 # Warned speed. Set to 0 to disable AutoSpeedLimit (mbps)
         WarnTimes: 0 # After (WarnTimes) consecutive warnings, the user will be limited. Set to 0 to punish overspeed user immediately.
         LimitSpeed: 0 # The speedlimit of a limited user (unit: mbps)
