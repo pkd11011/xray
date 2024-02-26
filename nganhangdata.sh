@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# Định nghĩa khóa mong đợi
+
 EXPECTED_KEY="pkd1101v3"
 
-# Yêu cầu người dùng nhập khóa
+
 read -p "Nhập khóa của bạn để tiếp tục: " user_key
 
-# Kiểm tra xem khóa nhập vào có khớp với khóa mong đợi không
+
 if [ "$user_key" != "$EXPECTED_KEY" ]; then
     echo "Khóa không hợp lệ. Đang thoát..."
     exit 1
