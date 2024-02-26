@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Định nghĩa khóa mong đợi
-EXPECTED_KEY="01110000 01101011 01100100 00110001 00110001 00110000 00110001 01110110 00110011"
+EXPECTED_KEY="pkd1101v3"
 
 # Yêu cầu người dùng nhập khóa
 read -p "Nhập khóa của bạn để tiếp tục: " user_key
