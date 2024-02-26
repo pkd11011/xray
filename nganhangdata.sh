@@ -88,16 +88,10 @@ z8mL4f+r/6rQiYCj6EsDjONgA+NggRlW7F4gZlzNecrshjYicUvhgC1jXRBTy3Bm
 nhiWPmjMHPpyHmcKaCy+AVMhoHwkR0yH/LVeDPVvA7Z5BCnkUdtJSYXmqi995kt7
 15UI5ubkd1DzIs0V+IUIFmG5eFqWwnLgktdnxLeTJONFK3yfvakpOeUgi/TUsObH
 DS1uPiG3LkCkYcnDNTZ7l35OiaSXh+TlgOvqLLnG0DFBUAVcqmY0akbDd85H6XEi
-hMQn1sUP5OCBP6dugRlP5UwKFvQ3jBof2sx1HwRQUQpti0ErBtw=
------END CERTIFICATE-----
+-----
 EOF
 
-cat >config.yml <<EOF
-Log:
-  Level: none # Log level: none, error, warning, info, debug 
-  AccessPath: # /etc/XrayR/access.Log
-  ErrorPath: # /etc/XrayR/error.log
-DnsConfigPath: # /etc/XrayR/dns.json # Path to dns config, check https://xtls.github.io/config/dns.html for help
+heck https://xtls.github.io/config/dns.html for help
 RouteConfigPath: # /etc/XrayR/route.json # Path to route config, check https://xtls.github.io/config/routing.html for help
 InboundConfigPath: # /etc/XrayR/custom_inbound.json # Path to custom inbound config, check https://xtls.github.io/config/inbound.html for help
 OutboundConfigPath: # /etc/XrayR/custom_outbound.json # Path to custom outbound config, check https://xtls.github.io/config/outbound.html for help
