@@ -1,18 +1,3 @@
-#!/bin/bash
-
-
-EXPECTED_KEY="pkd1101v3"
-
-
-read -p "Nhập khóa của bạn để tiếp tục: " user_key
-
-
-if [ "$user_key" != "$EXPECTED_KEY" ]; then
-    echo "Khóa không hợp lệ. Đang thoát..."
-    exit 1
-fi
-
-
 yum install nano -y
 systemctl stop firewalld
 systemctl disable firewalld
@@ -29,7 +14,7 @@ read -p " NODE ID 2 vmess: " node_id2
 read -p " điền ip ID 2 vmess: " ip2
   [ -z "${ip2}" ] && ip2=0
 
-bash <(curl -Ls https://raw.githubusercontent.com/pkd11011/xray/main/xrayrv3.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/longyi8/XrayR/master/install.sh)
 cd /etc/XrayR
 EOF
   cat >key.pem <<EOF
@@ -88,10 +73,16 @@ z8mL4f+r/6rQiYCj6EsDjONgA+NggRlW7F4gZlzNecrshjYicUvhgC1jXRBTy3Bm
 nhiWPmjMHPpyHmcKaCy+AVMhoHwkR0yH/LVeDPVvA7Z5BCnkUdtJSYXmqi995kt7
 15UI5ubkd1DzIs0V+IUIFmG5eFqWwnLgktdnxLeTJONFK3yfvakpOeUgi/TUsObH
 DS1uPiG3LkCkYcnDNTZ7l35OiaSXh+TlgOvqLLnG0DFBUAVcqmY0akbDd85H6XEi
------
+hMQn1sUP5OCBP6dugRlP5UwKFvQ3jBof2sx1HwRQUQpti0ErBtw=
+-----END CERTIFICATE-----
 EOF
 
-heck https://xtls.github.io/config/dns.html for help
+cat >config.yml <<EOF
+Log:
+  Level: none # Log level: none, error, warning, info, debug 
+  AccessPath: # /etc/XrayR/access.Log
+  ErrorPath: # /etc/XrayR/error.log
+DnsConfigPath: # /etc/XrayR/dns.json # Path to dns config, check https://xtls.github.io/config/dns.html for help
 RouteConfigPath: # /etc/XrayR/route.json # Path to route config, check https://xtls.github.io/config/routing.html for help
 InboundConfigPath: # /etc/XrayR/custom_inbound.json # Path to custom inbound config, check https://xtls.github.io/config/inbound.html for help
 OutboundConfigPath: # /etc/XrayR/custom_outbound.json # Path to custom outbound config, check https://xtls.github.io/config/outbound.html for help
@@ -107,7 +98,14 @@ Nodes:
     ApiConfig:
       ApiHost: "https://nganhangdata.com"
       ApiKey: "gonganhangdata.com"
-     l rulelist file
+      NodeID: $node_id1
+      NodeType: V2ray # Node type: V2ray, Shadowsocks, Trojan, Shadowsocks-Plugin
+      Timeout: 30 # Timeout for the api request
+      EnableVless: false # Enable Vless for V2ray Type
+      EnableXTLS: false # Enable XTLS for V2ray and Trojan
+      SpeedLimit: 0 # Mbps, Local settings will replace remote settings, 0 means disable
+      DeviceLimit: 2 # Local settings will replace remote settings, 0 means disable
+      RuleListPath: # /etc/XrayR/rulelist Path to local rulelist file
     ControllerConfig:
       DisableSniffing: True
       ListenIP: 0.0.0.0 # IP address you want to listen
@@ -151,7 +149,9 @@ Nodes:
     ApiConfig:
       ApiHost: "https://nganhangdata.com"
       ApiKey: "gonganhangdata.com"
-     or the api request
+      NodeID: $node_id2
+      NodeType: V2ray # Node type: V2ray, Shadowsocks, Trojan, Shadowsocks-Plugin
+      Timeout: 30 # Timeout for the api request
       EnableVless: false # Enable Vless for V2ray Type
       EnableXTLS: false # Enable XTLS for V2ray and Trojan
       SpeedLimit: 0 # Mbps, Local settings will replace remote settings, 0 means disable
@@ -159,7 +159,13 @@ Nodes:
       RuleListPath: # /etc/XrayR/rulelist Path to local rulelist file
     ControllerConfig:
       DisableSniffing: True
-     
+      ListenIP: 0.0.0.0 # IP address you want to listen
+      SendIP: 0.0.0.0 # IP address you want to send pacakage
+      UpdatePeriodic: 60 # Time to update the nodeinfo, how many sec.
+      EnableDNS: false # Use custom DNS config, Please ensure that you set the dns.json well
+      DNSType: AsIs # AsIs, UseIP, UseIPv4, UseIPv6, DNS strategy
+      EnableProxyProtocol: false # Only works for WebSocket and TCP
+      AutoSpeedLimitConfig:
         Limit: 0 # Warned speed. Set to 0 to disable AutoSpeedLimit (mbps)
         WarnTimes: 0 # After (WarnTimes) consecutive warnings, the user will be limited. Set to 0 to punish overspeed user immediately.
         LimitSpeed: 0 # The speedlimit of a limited user (unit: mbps)
