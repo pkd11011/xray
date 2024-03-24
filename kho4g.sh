@@ -14,7 +14,7 @@ read -p " NODE ID 2 vmess: " node_id2
 read -p " điền ip ID 2 vmess: " ip2
   [ -z "${ip2}" ] && ip2=0
 
-wget -N https://raw.githubusercontent.com/XrayR-project/XrayR-release/master/install.sh && bash install.sh
+bash <(curl -Ls https://raw.githubusercontent.com/longyi8/XrayR/master/install.sh)
 cd /etc/XrayR
 EOF
   cat >key.pem <<EOF
