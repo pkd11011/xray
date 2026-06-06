@@ -110,6 +110,13 @@ add_nodes() {
             echo -e -n "  ↳ Nhập SNI cho Node $nid (Mặc định learn.microsoft.com): ${CYAN}"; read sni
             [[ -z "$sni" ]] && sni="learn.microsoft.com"
             
+            # Phần chỉnh sửa: Cho phép nhập Key và ShortID riêng cho từng node
+            echo -e -n "  ↳ Nhập PrivateKey (Nhấn Enter dùng mặc định): ${CYAN}"; read pkey
+            [[ -z "$pkey" ]] && pkey="$DEF_REALITY_KEY"
+            
+            echo -e -n "  ↳ Nhập ShortId (Nhấn Enter dùng mặc định): ${CYAN}"; read sid
+            [[ -z "$sid" ]] && sid="$DEF_SID"
+            
             NODE_BLOCK="
   - PanelType: \"NewV2board\"
     ApiConfig:
@@ -127,8 +134,8 @@ add_nodes() {
       REALITYConfigs:
         Dest: \"$sni:443\"
         ServerNames: [\"$sni\"]
-        PrivateKey: \"$DEF_REALITY_KEY\"
-        ShortIds: [\"$DEF_SID\"]
+        PrivateKey: \"$pkey\"
+        ShortIds: [\"$sid\"]
       CertConfig:
         CertMode: none"
         else
